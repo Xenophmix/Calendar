@@ -10,17 +10,9 @@ $gov_schedules = json_decode($json_str);
 $json_str2 = file_get_contents('./source/schedule1.json');
 $default_schedules = json_decode($json_str2);
 
-// echo "<pre>";
-// print_r($default_schedules);
-// echo "<pre/>";
-
 // 文字
 $json_poetry = file_get_contents('./source/poetry.json');
 $poetry = json_decode($json_poetry);
-
-// echo "<pre>";
-// print_r($poetry);
-// echo "<pre/>";
 
 // 一週幾天
 $days_of_week = 7;
@@ -29,7 +21,6 @@ $days_of_week = 7;
 // 現在的日期(Y=年，m=月)
 $Time_now = date('Y-m');
 
-// echo $Time_now;
 
 $date = isset($_GET["date"]) ? $_GET["date"] : $Time_now;
 
@@ -38,7 +29,6 @@ $first_day = date('w', strtotime($date . "-1"));
 $year = date('Y', strtotime($date . "-1"));
 // 這個月
 $month = date('n', strtotime($date . "-1"));
-
 // 今天
 $today = date('Ymd');
 // 選擇的這個月幾天
@@ -55,41 +45,31 @@ $next_year = date('Y-m', strtotime("+1 year", strtotime($date . "-1")));
 // 前一年
 $prev_year = date('Y-m', strtotime("-1 year", strtotime($date . "-1")));
 
-// 詩
-$poem = $poetry->{"$month"};
-
-// echo $poem;
-
-
 
 switch ($month) {
   case 1:
   case 2:
   case 3:
-    $effect = 1;
-    $imgurl = 1;
-    $alleffect = 'flower';
+    $season = 'spring';
+    $alleffect = 'sakura';
     break;
   case 4:
   case 5:
   case 6:
-    $effect = 2;
-    $imgurl = 2;
+    $season = 'summer';
     $alleffect = 'rainy';
     break;
   case 7:
   case 8:
   case 9:
-    $effect = 3;
-    $imgurl = 3;
+    $season = 'autumn';
     $alleffect = 'maple';
     break;
   case 10:
   case 11:
   case 12:
-    $effect = 4;
-    $imgurl = 4;
-    $alleffect = 'fall';
+    $season = 'winter';
+    $alleffect = 'snow';
     break;
 }
 
@@ -109,14 +89,17 @@ switch ($month) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
   <!-- 預設的css樣式，版面控制 -->
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/index.css">
   <!-- 根據月份改變讀取的css，放後面優先級別高 -->
-  <link rel="stylesheet" href="./css/effect<?php echo $effect ?>.css">
+  <link rel="stylesheet" href="./css/<?php echo $season ?>.css">
 
   <!-- 字體 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 
   <!-- script -->
   <script src="./js/Time.js"></script>
@@ -128,7 +111,7 @@ switch ($month) {
 
 
 <body>
-
+  <!-- sakura櫻花 -->
   <!-- rainy下雨 -->
   <!-- maple落葉 -->
   <!-- fall下雪 -->
@@ -172,14 +155,13 @@ switch ($month) {
 
           </nav>
         </div>
-        <div class="w-50 h-100 glow">
-          <div style="height:calc(100% / 3);" class="border ms-1 w-100">
-            <div style="<?= ($month == 5) ? 'font-size:20px;' : ''; ?> display: flex; justify-content: center; align-items: center; height: 100%;">
-              <?= $poem ?>
-            </div>
+        <div class="w-50 h-100 ">
+          <!-- 未來做個點擊後翻譯成中文的效果 -->
+          <div style="height:calc(100% / 3);" class="border ms-1 w-100 poetry d-flex">
+            <?php echo $poetry->{$month} ?>
           </div>
           <div style="height:calc(100% / 3) ;" class="border ms-1 w-100">
-            <img style="object-fit:cover;" class="w-100 h-100" src="./img/Gif/<?php echo $effect ?>.gif" alt="四季變化">
+            <img style="object-fit:cover;" class="w-100 h-100" src="./img/Gif/<?php echo $season ?>.gif" alt="四季變化">
           </div>
           <div style="height:calc(100% / 3);" class="border ms-1 w-100"><iframe width="100%-1px" height="100%-10px" src="https://embed.windy.com/embed2.html?lat=24.939&lon=121.542&detailLat=24.939&detailLon=121.542&width=650&height=450&zoom=5&level=surface&overlay=wind&product=ecmwf&menu=&message=&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1" frameborder="0"></iframe></div>
         </div>
@@ -199,6 +181,7 @@ switch ($month) {
                 <th>六</th>
               </tr>
             </thead>
+            <!-- 萬年曆程式碼 -->
             <tbody>
               <?php
               for ($week = 0; $week < $weeks_of_a_month; $week++) {
@@ -280,7 +263,7 @@ switch ($month) {
   </section>
 
   <!-- 故意移到後面 讓網頁讀完後再跑效果 -->
-  <script src="./js/<?php echo $effect ?>.js"></script>
+  <script src="./js/<?php echo $season ?>.js"></script>
 </body>
 
 </html>

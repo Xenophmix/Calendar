@@ -19,10 +19,7 @@ const clock = function(){
     document.getElementById('clock').innerHTML = h+'點'+m+'分'+s+'秒';
     
 }
-
-window.onload = clock;
 // 1000毫秒更新一次 記得寫外面
 setInterval(function(){
     clock();
 }, 1000);
-
