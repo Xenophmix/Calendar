@@ -22,20 +22,19 @@
 
 .calendar .date .circular {
   position: absolute;
-  top: .25rem;
-  right: .25rem;
+  top: 0.25rem;
+  right: 0.25rem;
   width: 40px;
   border-radius: 100%;
-  font-family: 'Ubuntu', sans-serif;
-
+  font-family: "Ubuntu", sans-serif;
 }
 
 .calendar .desc {
   box-sizing: border-box;
-  padding: 0 .25rem;
+  padding: 0 0.25rem;
   width: 100%;
   text-align: left;
-  bottom: .5rem;
+  bottom: 0.5rem;
   font-size: 18px;
   position: absolute;
   overflow: hidden;
@@ -50,10 +49,8 @@
   height: 600px;
 }
 
-.today>div>.circular {
+.today > div > .circular {
   background-color: lightblue;
-
-
 }
 
 a {
@@ -71,7 +68,6 @@ a {
 .arrowL {
   right: 0;
   animation: ani_arrowL 2s linear 0s infinite;
-
 }
 
 .arrowR {
@@ -147,15 +143,42 @@ a {
   position: absolute;
   width: 2px;
   height: 50px;
-  background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .6));
+  background: linear-gradient(
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.6)
+  );
   z-index: 1;
 }
 
+/* 楓葉 */
 .maple {
   position: absolute;
-  background: url(http://www.clipartqueen.com/image-files/red-lobed-fall-clipart-leaf.png);
-  z-index: 1;
   width: 35px;
   height: 35px;
+  background: url(../img/leaf/mapleleaf.png);
   background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* 櫻花 */
+.sakura {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background: url(../img/leaf/sakura.png);
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+.glow {
+  filter: drop-shadow(0 0 5px white);
+}
+
+.poetry {
+  font-family: "Caveat", cursive;
+  color: #fdd84c;
+  font-size: 26px;
+  background: rgba(135, 40, 40, 0.3);
+  align-items: center;
+  justify-content: center;
 }

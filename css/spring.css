@@ -1,7 +1,7 @@
 body {
   height: 100vh;
   /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
-  background: url(../img/BG/summer.jpg);
+  background: url(../img/BG/spring2.jpg);
   overflow: hidden;
   /* filter: drop-shadow(0 0 5px white); */
   background-repeat: no-repeat;
@@ -11,33 +11,34 @@ body {
   /* backdrop-filter: blur(5px); */
 }
 
-.glow {
-  filter: drop-shadow(0 0 5px white);
-}
+
 
 .calendar .holiday {
-  background-color: #34b5ed;
+  background-color: blanchedalmond;
+
 }
 
 .calendar .date {
-  color:#f8d84b;
-  
+  color: rgb(242, 156, 177);
+
 }
 
 .calendar .date:not(.other-month):hover {
-  background: #4bdee3;
+  background: rgb(249, 204, 226);
+
 }
 
+
 .left-img {
-  background: url(../img/leftside/summeredited.jpg);
-  background-size:100% 100%;
+  background: url(../img/leftside/springedited.jpg);
+  background-size:cover;
 }
 
 .left-font-top {
   align-items: center;
   font-size: 50px;
-  font-family: 'Ubuntu', sans-serif ;
-  color: #f8d84b;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(242, 156, 177);
   background: rgba(0, 0, 0, .7);
   border-radius: 100px;
 }
@@ -45,16 +46,19 @@ body {
 .left-font-bottom {
   align-items: center;
   font-size: 40px;
-  font-family: 'Ubuntu', sans-serif ;
-  color: #f8d84b;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(242, 156, 177);
   background: rgba(0, 0, 0, .7);
   border-radius: 100px;
+
 }
+
 tr>th {
-  color: #fdd84c;
+  color: rgb(242, 156, 177);
   font-weight: 900;
   background: rgba(0, 23, 27, 0.4);
 }
+
 .fa-solid {
-  color: #4bdee3;
+  color: blanchedalmond;
 }
