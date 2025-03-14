@@ -1,0 +1,66 @@
+body {
+  height: 100vh;
+  /* background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%); */
+  background: url(../img/BG/autumn.jpg);
+  overflow: hidden;
+  /* filter: drop-shadow(0 0 5px white); */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  /* backdrop-filter: blur(5px); */
+}
+
+.glow {
+  filter: drop-shadow(0 0 5px white);
+}
+
+.calendar .holiday {
+  background-color: lightseagreen;
+}
+
+.calendar .holiday {
+  background-color: rgb(135,69,33);
+}
+
+.calendar .date {
+  color: #fdd84c;
+  
+}
+
+
+.calendar .date:not(.other-month):hover {
+  background: rgb(198, 111, 53);
+
+}
+
+.left-img {
+  background: url(../img/leftside/autumnedited.jpg);
+  background-size:100% 100%;
+}
+
+.left-font-top {
+  align-items: center;
+  font-size: 50px;
+  font-family: 'Ubuntu', sans-serif ;
+  color: #fdd84c;
+  background: rgba(0, 0, 0, .7);
+  border-radius: 100px;
+}
+
+.left-font-bottom {
+  align-items: center;
+  font-size: 40px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fdd84c;
+  background: rgba(0, 0, 0, .7);
+  border-radius: 100px;
+}
+tr>th {
+  color: #fdd84c;
+  font-weight: 900;
+  background: rgba(0, 23, 27, 0.4);
+}
+.fa-solid{
+  color:rgb(198, 111, 53);
+}

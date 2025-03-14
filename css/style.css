@@ -1,0 +1,161 @@
+* {
+  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.calendar .holiday {
+  background-color: lightpink;
+}
+
+.calendar .date:not(.other-month):hover .circular {
+  font-weight: bold;
+  font-size: 28px;
+}
+
+/* 必要 */
+.calendar .date {
+  position: relative;
+  border: 1px solid lightgray;
+  background: #00171ba6;
+}
+
+.calendar .date .circular {
+  position: absolute;
+  top: .25rem;
+  right: .25rem;
+  width: 40px;
+  border-radius: 100%;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+.calendar .desc {
+  box-sizing: border-box;
+  padding: 0 .25rem;
+  width: 100%;
+  text-align: left;
+  bottom: .5rem;
+  font-size: 18px;
+  position: absolute;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+  cursor: default;
+  font-weight: bold;
+}
+
+.calendar {
+  width: 100%;
+  height: 600px;
+}
+
+.today>div>.circular {
+  background-color: lightblue;
+
+
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  /* padding: 10px; */
+}
+
+.fa-solid {
+  font-weight: 900;
+  font-size: 37px;
+  color: aqua;
+}
+
+.arrowL {
+  right: 0;
+  animation: ani_arrowL 2s linear 0s infinite;
+
+}
+
+.arrowR {
+  left: 0;
+  animation: ani_arrowR 2s linear 0s infinite;
+}
+
+.circle:hover {
+  animation: circle 2s linear 0s infinite;
+}
+
+.fa-circle-chevron-right {
+  font-size: 10px;
+}
+
+.fa-arrows-rotate {
+  font-size: 40px;
+}
+
+@keyframes ani_arrowL {
+  50% {
+    right: 5px;
+  }
+
+  100% {
+    right: 0px;
+  }
+}
+
+@keyframes ani_arrowR {
+  50% {
+    left: 5px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes circle {
+  0% {
+    transform: rotateZ(0);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* 下雪 */
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(white, white);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px white);
+  z-index: 1;
+}
+
+/* 下雨 */
+#rainy {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  /* 不擋到其他元素 */
+  pointer-events: none;
+}
+
+.rain {
+  position: absolute;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .6));
+  z-index: 1;
+}
+
+.maple {
+  position: absolute;
+  background: url(http://www.clipartqueen.com/image-files/red-lobed-fall-clipart-leaf.png);
+  z-index: 1;
+  width: 35px;
+  height: 35px;
+  background-size: 100% 100%;
+}
